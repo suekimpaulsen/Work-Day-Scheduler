@@ -21,11 +21,11 @@
 $("#currentDay").html(moment().format("dddd, MMMM Do YYYY"))
 
 //moment time block
-var currentTime = moment().hour();
-var blockTime = parseInt($(this).attr("id"));
-
 function timeTrack() {
     $(".time-block").each(function() {
+        var currentTime = moment().hour();
+        var blockTime = parseInt($(this).attr("id").split("hour")[1]);
+
         console.log(currentTime);
         console.log(blockTime);
     
