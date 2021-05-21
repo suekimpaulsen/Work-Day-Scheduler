@@ -38,7 +38,7 @@ timeTrack();
 
 //localstorage
 
-$('#hour9 .description').val(localStorage.getItem('hour9'));
+$('#hour9 .description').val(window.localStorage.getItem('hour9'));
 $('#hour10 .description').val(localStorage.getItem('hour10'));
 $('#hour11 .description').val(localStorage.getItem('hour11'));
 $('#hour12 .description').val(localStorage.getItem('hour12'));
@@ -51,10 +51,11 @@ $('#hour17 .description')
 
 //save button
 $(".saveBtn").click (function() {
-    var time = $(this).attr(".description").val();
-    var text = $(this).attr(".hour");
+    var time = $(this).siblings(".description").val();
+    var text = $(this).parent().attr("id");
     localStorage.setItem("time", time);
-    localStorage.setItem("text", text)
+    localStorage.setItem("text", text);
+    console.log(time)
     console.log(localStorage)
 })
 
