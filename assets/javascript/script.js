@@ -38,20 +38,23 @@ timeTrack();
 
 //localstorage
 
-var toDoList = JSON.parse(localStorage.getItem('description'))
-
-// $('#hour9 .description')
-// $('#hour10 .description')
-// $('#hour11 .description')
-// $('#hour12 .description')
-// $('#hour13 .description')
-// $('#hour14 .description')
-// $('#hour15 .description')
-// $('#hour16 .description')
-// $('#hour17 .description')
+$('#hour9 .description').val(localStorage.getItem('hour9'));
+$('#hour10 .description').val(localStorage.getItem('hour10'));
+$('#hour11 .description').val(localStorage.getItem('hour11'));
+$('#hour12 .description').val(localStorage.getItem('hour12'));
+$('#hour13 .description')
+$('#hour14 .description')
+$('#hour15 .description')
+$('#hour16 .description')
+$('#hour17 .description')
 
 
 //save button
 $(".saveBtn").click (function() {
-    console.log('save')
+    var time = $(this).attr(".description").val();
+    var text = $(this).attr(".hour");
+    localStorage.setItem("time", time);
+    localStorage.setItem("text", text)
+    console.log(localStorage)
 })
+
