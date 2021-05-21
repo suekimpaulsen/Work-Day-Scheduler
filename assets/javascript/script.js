@@ -51,8 +51,8 @@ $('#hour17 .description')
 
 //save button
 $(".saveBtn").click (function() {
-    var time = $(this).siblings(".description").val();
-    var text = $(this).parent().attr("id");
+    var text = $(this).siblings(".description").val();
+    var time = $(this).parent().attr("id");
     localStorage.setItem("time", time);
     localStorage.setItem("text", text);
     console.log(time)
