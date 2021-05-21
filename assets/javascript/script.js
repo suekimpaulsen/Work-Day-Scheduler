@@ -3,20 +3,6 @@
 // });
 
 
-
-//localstorage
-
-// $('#hour9 .description')
-// $('#hour10 .description')
-// $('#hour11 .description')
-// $('#hour12 .description')
-// $('#hour13 .description')
-// $('#hour14 .description')
-// $('#hour15 .description')
-// $('#hour16 .description')
-// $('#hour17 .description')
-
-
 //moment
 $("#currentDay").html(moment().format("dddd, MMMM Do YYYY"))
 
@@ -47,6 +33,23 @@ function timeTrack() {
     })
 }
 timeTrack();
+
+
+
+//localstorage
+
+var toDoList = JSON.parse(localStorage.getItem('description'))
+
+// $('#hour9 .description')
+// $('#hour10 .description')
+// $('#hour11 .description')
+// $('#hour12 .description')
+// $('#hour13 .description')
+// $('#hour14 .description')
+// $('#hour15 .description')
+// $('#hour16 .description')
+// $('#hour17 .description')
+
 
 //save button
 $(".saveBtn").click (function() {
