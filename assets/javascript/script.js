@@ -2,7 +2,7 @@ $(document).ready(function() {
     //display current day
     $("#currentDay").html(moment().format("dddd, MMMM Do YYYY"))
 
-    //moment time block
+    //current & block time tracks using moment
     function timeTrack() {
         $(".time-block").each(function() {
             var currentTime = moment().hour();
@@ -27,13 +27,14 @@ $(document).ready(function() {
     }
     timeTrack();
 
-    //save button
+    //button to save values to local storage
     $(".saveBtn").click (function() {
         var text = $(this).siblings(".description").val();
         var time = $(this).parent().attr("id");
         localStorage.setItem(time, text);
-        console.log(localStorage)
     })
+
+    //retrieve text values from local storage
     $("#hour9 .description").val(localStorage.getItem("hour9"))
     $("#hour10 .description").val(localStorage.getItem("hour10"))
     $("#hour11 .description").val(localStorage.getItem("hour11"))
@@ -44,7 +45,7 @@ $(document).ready(function() {
     $("#hour16 .description").val(localStorage.getItem("hour16"))
     $("#hour17 .description").val(localStorage.getItem("hour17"))
 
-    //clear button
+    //button to clear local storage
     $(".clearBtn").click (function() {
         localStorage.clear();
     })
